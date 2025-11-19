@@ -3672,7 +3672,7 @@ int ggml_metal_op_argsort(ggml_metal_op_t ctx, int idx) {
     ggml_metal_buffer_id bid_tmp = bid_dst;
     bid_tmp.offs += ggml_nbytes(op);
 
-    if ((int) ceil(std::log(npr) / std::log(2)) % 2 == 1) {
+    if ((int) ceil(log(npr) / log(2)) % 2 == 1) {
         std::swap(bid_dst, bid_tmp);
     }
 
